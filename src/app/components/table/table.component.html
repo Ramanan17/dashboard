@@ -1,0 +1,54 @@
+<h4>Total Commitment for Permanent Employees for the Month of {{date}}</h4>
+
+<table *ngIf="!loading" id="table_id" class="table table-responsive table-hover table-bordered">
+    <thead class="thead-dark">
+          <tr>
+            <th>Place Name</th>
+            <th> Gross Salary(Permanent)</th>
+            <th> Employee PF (Permanent) </th>
+            <th>Employee ESI(Permanent)</th>
+            <th>Employer ESI(Permanent)</th>
+            <th>PF(Permanent)</th>
+            <th>Net Salary(Permanent)</th>
+
+          </tr>
+      </thead>
+      <tbody>
+        <tr style="background:green;color:floralwhite">
+            <td  style="font-weight: bold;font-size:large" >Total</td>
+            <td style="font-weight: bold;font-size:large">{{EGross }}</td>
+            <td  style="font-weight: bold;font-size:large">{{EPF }}</td>
+            <td  style="font-weight: bold;font-size:large">{{EESI }}</td>
+            <td  style="font-weight: bold;font-size:large">{{EEESI }}</td>
+            <td  style="font-weight: bold;font-size:large">{{EEPF }}</td>
+            <td  style="font-weight: bold;font-size:large">{{ENET}}</td>
+        </tr>
+
+          <tr class="table-info" *ngFor="let commit of Commitments">
+            <td style="font-weight:bold;font-size:large;color:floralwhite;background: orange">
+              <button class="btn btn-link" (click)="get(commit.PlaceName)">{{commit.PlaceName}}</button>
+              </td>
+            <td style="font-weight:bold">{{commit.EGross}}</td>
+            <td style="font-weight:bold">{{commit.EPF}}</td>
+            <td style="font-weight:bold">{{commit.EESI}}</td>
+            <td style="font-weight:bold">{{commit.EEESI}}</td>
+            <td style="font-weight:bold">{{commit.EEPF}}</td>
+            <td style="font-weight:bold">{{commit.ENet}}</td>
+
+
+
+
+
+
+
+          </tr>
+      </tbody>
+  </table>
+  <div align="center" >
+      <div class="loader"  *ngIf="loading"></div>
+  </div>
+
+
+
+
+

@@ -1,0 +1,47 @@
+Employee details for the Month {{date}}
+<table *ngIf="!loading" class="table table-hover table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Sl.No</th>
+      <th>Name</th>
+      <th>Place Name</th>
+
+      <th>Design</th>
+      <th>Total</th>
+      <th>PF</th>
+      <th>ESI</th>
+      <th>LIC</th>
+      <th>Net Wages</th>
+      <th>Grade</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of perm;let i=index" style="background:blue;color: white;font-weight: bold">
+      <td>{{i+1}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.placename}}</td>
+
+      <td>{{p.Design}}</td>
+      <td>{{p.Total}}</td>
+      <td>{{p.PF}}</td>
+      <td>{{p.ESI}}</td>
+      <td>{{p.LIC}}</td>
+      <td>{{p.NetWages}}</td>
+      <td>{{p.grade}}</td>
+
+
+
+
+
+
+
+
+    </tr>
+
+  </tbody>
+
+</table>
+<div align="center">
+    <div class="loader"  *ngIf="loading"></div>
+</div>

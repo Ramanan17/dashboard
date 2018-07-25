@@ -1,0 +1,55 @@
+<h4>Total Commitment for Local Employees for the Month of {{date}}</h4>
+<table id="dtBasicExample" *ngIf="!loading" class="table table-responsive table-hover table-bordered ">
+    <thead class="thead-dark">
+          <tr>
+            <th>Place Name</th>
+
+            <th> Gross Salary(local employee)</th>
+            <th> Employee PF (local employee) </th>
+            <th>Employee ESI(local employee)</th>
+            <th>Employer ESI(local employee)</th>
+            <th>PF(local employee)</th>
+            <th>Net Salary(local employee)</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          <tr style="background:green;color:floralwhite">
+            <td  style="font-weight: bold;font-size:large">Total </td>
+            <td  style="font-weight: bold;font-size:large">{{LGross}}</td>
+            <td  style="font-weight: bold;font-size:large">{{LPF}}</td>
+            <td  style="font-weight: bold;font-size:large">{{LESI}}</td>
+            <td  style="font-weight: bold;font-size:large">{{LEESI}}</td>
+            <td  style="font-weight: bold;font-size:large">{{LEPF}}</td>
+            <td  style="font-weight: bold;font-size:large">{{LNET}}</td>
+
+
+            </tr>
+          <tr class="table-info" style="font-weight: bold"  *ngFor="let commit of Commitments">
+                <td style="font-weight:bold;font-size:large;color:floralwhite;background: orange">
+                  <button class="btn btn-link" (click)="get(commit.placeid)">{{commit.PlaceName}}</button></td>
+
+            <td  style="font-weight: bold" >{{commit.LGross}}</td>
+            <td  style="font-weight: bold" >{{commit.LPF}}</td>
+            <td  style="font-weight: bold" >{{commit.LESI}}</td>
+            <td  style="font-weight: bold" >{{commit.LEESI}}</td>
+            <td  style="font-weight: bold" >{{commit.LEPF}}</td>
+            <td  style="font-weight: bold" >{{commit.LNET}}</td>
+
+
+
+
+
+
+
+
+          </tr>
+
+      </tbody>
+  </table>
+
+  <div align="center">
+      <div class="loader"  *ngIf="loading"></div>
+  </div>
+
+

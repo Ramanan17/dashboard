@@ -1,0 +1,51 @@
+<h4>Outstanding Commitment for Permanent Employees for the month of {{date}}</h4>
+<table id="dtBasicExample" *ngIf="!loading" class="table table-responsive table-hover table-bordered">
+    <thead class="thead-dark">
+          <tr>
+            <th>Place Name</th>
+            <th> Gross Salary(Permanent)</th>
+            <th> Employee PF (Permanent) </th>
+            <th>Employee ESI(Permanent)</th>
+            <th>Employer ESI(Permanent)</th>
+            <th>PF(Permanent)</th>
+            <th>Net Salary(Permanent)</th>
+
+          </tr>
+      </thead>
+      <tbody>
+          <tr style="background:green;color:floralwhite">
+              <td style="font-weight: bold;font-size:large">Total</td>
+              <td style="font-weight: bold;font-size:large">{{EGross}}</td>
+              <td style="font-weight: bold;font-size:large">{{EPF}}</td>
+              <td style="font-weight: bold;font-size:large">{{EESI}}</td>
+              <td style="font-weight: bold;font-size:large">{{this.Math.round(EEESI)}}</td>
+              <td style="font-weight: bold;font-size:large">{{EEPF}}</td>
+              <td style="font-weight: bold;font-size:large">{{ENET}}</td>
+          </tr>
+          <tr class="table-info" style="font-weight: bold" style="font-weight:bold;font-size:large;background: orange" *ngFor="let commit of Commitments">
+            <td  style="font-weight:bold;font-size:large;color:floralwhite;background: orange" ><button class="btn btn-link" (click)="get(commit.PlaceName)">{{commit.PlaceName}}</button></td>
+            <td  style="font-weight: bold" >{{commit.PEGross}}</td>
+            <td  style="font-weight: bold" >{{commit.PEPF}}</td>
+            <td  style="font-weight: bold" >{{commit.PEESI}}</td>
+            <td  style="font-weight: bold" >{{this.Math.round(commit.PEEESI)}}</td>
+            <td  style="font-weight: bold" >{{commit.PEEPF}}</td>
+            <td  style="font-weight: bold" >{{commit.PENet}}</td>
+
+
+
+
+
+
+
+
+
+          </tr>
+      </tbody>
+  </table>
+
+
+
+
+  <div align="center">
+      <div class="loader"  *ngIf="loading"></div>
+  </div>
